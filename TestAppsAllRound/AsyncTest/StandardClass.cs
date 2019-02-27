@@ -6,25 +6,17 @@ namespace TestAppsAllRound.AsyncTest
 {
     class StandardClass
     {
-        private readonly AsyncForm asyncForm = new AsyncForm();
-
-        public void StartStandardTask()
-        {
-            TaskSuccess();      //同期型処理の場合は何か重い処理をしないとログフォームが起動しない。
-            asyncForm.Task();   //ログフォームを起動する
-        }
-
         //同期処理メソッド
-        private void TaskSuccess()
+        public int TaskStart()
         {
-            TaskDelay();
-            asyncForm.Task(0);  //起動したログフォームのラベルに結果を表示させる。
+            return TaskDelay();
         }
 
         //何か重い処理とする。
-        private void TaskDelay()
+        private int TaskDelay()
         {
             Thread.Sleep(5000);
+            return 0;
         }
     }
 }

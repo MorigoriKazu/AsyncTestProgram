@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/*
+ * ログフォーム
+ */ 
 namespace TestAppsAllRound.AsyncTest
 {
     public partial class AsyncForm : Form
@@ -22,13 +24,13 @@ namespace TestAppsAllRound.AsyncTest
         {
             switch (decision)
             {
-                case 0:
+                case 0:     //処理後成功の表示
                     CompleteTask();
                     break;
-                case 1:
+                case 1:     //処理後失敗の表示
                     FailedTask();
                     break;
-                default:
+                default:    //処理中の表示
                     WaitTask();
                     Show();
                     break;

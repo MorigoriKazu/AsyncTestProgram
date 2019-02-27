@@ -10,7 +10,7 @@ namespace TestAppsAllRound.AsyncTest
 
         public void StartStandardTask()
         {
-            TaskSuccess();
+            TaskSuccess();      //同期型処理の場合は何か重い処理をしないとログフォームが起動しない。
             asyncForm.Task();   //ログフォームを起動する
         }
 

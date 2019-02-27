@@ -9,15 +9,15 @@ namespace TestAppsAllRound.AsyncTest
         private readonly AsyncForm asyncForm = new AsyncForm();
         public void StartAsyncTask()
         {
-            TaskSuccess();
-            asyncForm.Task();
+            TaskSuccess();      //非同期の場合はすぐログフォームを起動してくれる。
+            asyncForm.Task();   //ログフォームを起動する
         }
 
         //非同期処理メソッド
         private async void TaskSuccess()
         {
-            await TaskDelay();
-            asyncForm.Task(0);
+            await TaskDelay();     //何か重い処理をやる。
+            asyncForm.Task(0);     //重い処理が終わるとログフォームにある結果表示メソッドを起動する。
         }
 
         //何か重い処理とする。
